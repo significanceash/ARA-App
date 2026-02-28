@@ -3,63 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cwallet Clone</title>
+    <title>ARA Wallet Mini App</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #f8f9fa; color: #333; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding-bottom: 70px; }
-        .header { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: white; }
-        .balance-card { padding: 20px; text-align: left; }
-        .amount { font-size: 32px; font-weight: bold; margin: 5px 0; }
-        .action-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; padding: 10px 20px; text-align: center; }
-        .action-btn { background: #fff; border: 1px solid #eee; padding: 15px 5px; border-radius: 12px; font-size: 12px; }
-        .search-bar { margin: 15px 20px; background: #eee; border-radius: 10px; padding: 10px; display: flex; align-items: center; }
-        .token-list { padding: 0 20px; }
-        .token-row { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
-        /* Bottom Navigation */
-        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 10px 0; border-top: 1px solid #eee; }
-        .nav-item { text-align: center; font-size: 10px; color: #888; }
-        .nav-item i { font-size: 20px; display: block; margin-bottom: 3px; }
-        .active { color: #000; font-weight: bold; }
+        body { background-color: #f8f9fa; color: #333; font-family: sans-serif; margin: 0; padding-bottom: 80px; }
+        .header { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; }
+        .balance-card { padding: 25px 20px; background: white; }
+        .amount { font-size: 36px; font-weight: bold; margin: 5px 0; }
+        .action-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; padding: 15px 20px; }
+        .action-btn { background: #fff; border: 1px solid #eee; padding: 15px 5px; border-radius: 15px; font-size: 11px; text-align: center; cursor: pointer; }
+        .action-btn:active { background: #f0f0f0; }
+        .token-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; border-bottom: 1px solid #f0f0f0; background: white; }
+        .bottom-nav { position: fixed; bottom: 0; width: 100%; background: white; display: flex; justify-content: space-around; padding: 12px 0; border-top: 1px solid #eee; }
+        .nav-item { text-align: center; font-size: 11px; color: #888; flex: 1; cursor: pointer; }
+        .nav-item i { font-size: 20px; margin-bottom: 4px; display: block; }
+        .active { color: #f3ba2f; font-weight: bold; }
     </style>
 </head>
 <body>
     <div class="header">
-        <span style="font-weight: bold; font-size: 1.2em;">Cwallet</span>
+        <span style="font-weight: bold; font-size: 1.3em; color: #f3ba2f;">ARA Wallet</span>
         <div><i class="fa-regular fa-bell"></i> <i class="fa-solid fa-gear" style="margin-left: 15px;"></i></div>
     </div>
 
     <div class="balance-card">
-        <div style="color: #888;">$<0.01 <i class="fa-regular fa-eye"></i></div>
-        <div class="amount">$0.00 <span style="font-size: 14px; color: green;">- 0.01%</span></div>
-        <button style="background: #000; color: #fff; border: none; padding: 8px 15px; border-radius: 20px;">Buy/Sell</button>
+        <div style="color: #888; font-size: 14px;">Total Balance (USD) <i class="fa-regular fa-eye"></i></div>
+        <div class="amount">$0.00</div>
+        <div style="color: green; font-size: 13px;">+ 0.00% Today</div>
     </div>
 
     <div class="action-grid">
-        <div class="action-btn"><i class="fa-solid fa-arrow-up"></i><br>Send</div>
-        <div class="action-btn"><i class="fa-solid fa-arrow-down"></i><br>Receive</div>
-        <div class="action-btn"><i class="fa-solid fa-toolbox"></i><br>Toolkit</div>
-        <div class="action-btn"><i class="fa-solid fa-users"></i><br>Referral</div>
+        <div class="action-btn" onclick="alert('Send Feature Coming Soon')"><i class="fa-solid fa-paper-plane" style="color: #f3ba2f;"></i><br>Send</div>
+        <div class="action-btn" onclick="alert('Receive Feature Coming Soon')"><i class="fa-solid fa-qrcode" style="color: #f3ba2f;"></i><br>Receive</div>
+        <div class="action-btn" onclick="alert('Toolkit Opening...')"><i class="fa-solid fa-toolbox" style="color: #f3ba2f;"></i><br>Toolkit</div>
+        <div class="action-btn" onclick="alert('Invite Friends')"><i class="fa-solid fa-user-plus" style="color: #f3ba2f;"></i><br>Referral</div>
     </div>
 
-    <div class="search-bar"><i class="fa-solid fa-magnifying-glass" style="color: #aaa; margin-right: 10px;"></i> Search</div>
-
-    <div class="token-list">
-        <div class="token-row">
-            <div style="display: flex; align-items: center;">
-                <div style="width: 35px; height: 35px; background: #26a17b; border-radius: 50%; margin-right: 10px;"></div>
-                <div><b>USDT</b><br><span style="color: #888;">$1.00</span></div>
-            </div>
-            <div style="text-align: right;"><b>0.00</b><br><span style="color: #888;">$0.00</span></div>
+    <div style="padding: 10px 20px; font-weight: bold; color: #555;">Assets</div>
+    <div class="token-row">
+        <div style="display: flex; align-items: center;">
+            <div style="width: 40px; height: 40px; background: #f3ba2f; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; margin-right: 12px;"><i class="fa-solid fa-coins"></i></div>
+            <div><b>BNB</b><br><span style="color: #888; font-size: 12px;">Smart Chain</span></div>
         </div>
+        <div style="text-align: right;"><b>0.00</b><br><span style="color: #888; font-size: 12px;">$0.00</span></div>
     </div>
 
     <div class="bottom-nav">
         <div class="nav-item"><i class="fa-solid fa-right-left"></i>Trade</div>
-        <div class="nav-item"><i class="fa-solid fa-sack-dollar"></i>Earn</div>
         <div class="nav-item"><i class="fa-solid fa-rotate"></i>Swap</div>
-        <div class="nav-item"><i class="fa-solid fa-credit-card"></i>Card</div>
         <div class="nav-item active"><i class="fa-solid fa-wallet"></i>Wallet</div>
+        <div class="nav-item"><i class="fa-solid fa-compass"></i>DApps</div>
     </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.expand();
+        tg.setHeaderColor('#ffffff');
+    </script>
 </body>
 </html>
